@@ -1,0 +1,34 @@
+﻿@model  Favorit.es_Extended.Models.SearchViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Favorit.es</h1>
+    <p class="lead">Search for new favorit.es</p>
+
+    <form class="form-inline" method="get" action="@Url.Action("Index", "Home")">
+        <div>
+            <label for="search">Show me:</label>
+            <input type="text" class="form-control" id="search" name="search" placeholder="Kittens" value="@Model.SearchText">
+            <button type="submit" class="btn btn-default">Go</button>
+        </div>
+
+    </form>
+
+
+</div>
+
+
+<div class="row">
+    @foreach (var item in Model.PhotoCollection)
+    {
+        <div class="col-xs-6 col-md-4 photo">
+            <a href="@Url.Action("togglefavorite", "home", new { PhotoId = item.PhotoId, SmallUrl = item.SmallUrl, MediumUrl = item.MediumUrl, LargeUrl = item.LargeUrl, Tags = item.Tags })">
+                <img class="img-thumbnail" src="@item.MediumUrl" />
+                <div class="@(Model.IsPhotoFavorited(item) ? "heart" : "")"></div>
+            </a>
+        </div>
+    }
+</div>
