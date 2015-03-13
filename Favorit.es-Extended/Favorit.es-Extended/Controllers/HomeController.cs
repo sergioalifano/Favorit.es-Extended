@@ -11,6 +11,7 @@ namespace Favorit.es.Controllers
 {
     public class HomeController : Controller
     {
+        //data access layer 
         private FavoritesEntities db = new FavoritesEntities();
 
         public string UserID
@@ -78,7 +79,7 @@ namespace Favorit.es.Controllers
         }
 
         [Authorize()] //require user login
-        public ActionResult Favorite(Favorite favorite)
+        public ActionResult Favorite(Favorite favorite)//favorite is the table
         {
             favorite.UserId = this.UserID; //fill in userID
             if (!this.UserFavorites.Any(x => x.PhotoId == favorite.PhotoId))

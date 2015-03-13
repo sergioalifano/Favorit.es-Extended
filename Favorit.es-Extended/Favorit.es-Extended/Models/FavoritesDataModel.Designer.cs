@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\dustin\Documents\GitHub\Favorit.es-Extended\Favorit.es-Extended\Favorit.es-Extended\Models\FavoritesDataModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Technologist\Documents\GitHub\Favorit.es-Extended\Favorit.es-Extended\Favorit.es-Extended\Models\FavoritesDataModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
